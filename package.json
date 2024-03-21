@@ -2,9 +2,15 @@
   "name": "contextual-dependency",
   "version": "1.0.0",
   "description": "Helps installing and updating the latest compatible version of a package.",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "bin": {
+    "contextual-dependency": "src/cli.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/cli.js"
   },
   "keywords": [
     "npm",
@@ -12,5 +18,8 @@
     "peer"
   ],
   "author": "Mathis Hofer <mathis@fsfe.org>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "semver": "^7.6.0"
+  }
 }

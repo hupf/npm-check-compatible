@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/cli.js"
+    "start": "node src/cli.js",
+    "prepare": "husky"
   },
   "keywords": [
     "npm",
@@ -22,5 +23,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "semver": "^7.6.0"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

@@ -6,7 +6,7 @@ import { execSync } from "child_process";
 export function npmVersions(packageSpec) {
   const versions = npmView(packageSpec, "versions");
   if (versions.error) {
-    return []
+    return [];
   }
   return versions.reverse();
 }
@@ -37,7 +37,7 @@ export function npmJson(args) {
   try {
     const result = npm(`${args.join(" ")} 2>/dev/null || true`);
     return JSON.parse(result);
-  } catch(error) {
+  } catch (error) {
     return JSON.parse(error.stdout.toString());
   }
 }

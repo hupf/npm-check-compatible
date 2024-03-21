@@ -4,7 +4,11 @@ import { execSync } from "child_process";
  * Returns all available versions of a package, from newest to oldest.
  */
 export function npmVersions(packageSpec) {
-  return npmView(packageSpec, "versions").reverse();
+  const versions = npmView(packageSpec, "versions");
+  if (versions.error) {
+    return []
+  }
+  return versions.reverse();
 }
 
 /**
@@ -21,19 +25,23 @@ export function npmView(packageSpec, field) {
   if (field) {
     args.push(field);
   }
-  const result = npm(args.join(" "));
-  return JSON.parse(result);
+  return npmJson(args);
 }
 
 export function npmList(packageName) {
+  const args = ["list", "--json", packageName];
+  return npmJson(args);
+}
+
+export function npmJson(args) {
   try {
-    const result = npm(`list --json ${packageName} 2>/dev/null || true`);
+    const result = npm(`${args.join(" ")} 2>/dev/null || true`);
     return JSON.parse(result);
   } catch(error) {
     return JSON.parse(error.stdout.toString());
   }
 }
 
-export function npm(...args) {
-  return execSync(`npm ${args.join(" ")}`).toString();
+export function npm(args) {
+  return execSync(`npm ${args}`).toString();
 }

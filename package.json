@@ -1,12 +1,12 @@
 {
-  "name": "contextual-dependency",
+  "name": "npm-check-compatible",
   "version": "1.0.0",
-  "description": "Helps installing and updating the latest compatible version of a package.",
+  "description": "Determines latest compatible version of a package.",
   "type": "module",
   "main": "src/index.js",
   "exports": "./src/index.js",
   "bin": {
-    "contextual-dependency": "src/cli.js"
+    "npm-check-compatible": "src/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,7 +15,8 @@
   "keywords": [
     "npm",
     "dependencies",
-    "peer"
+    "peerDependencies",
+    "compatible"
   ],
   "author": "Mathis Hofer <mathis@fsfe.org>",
   "license": "Apache-2.0",

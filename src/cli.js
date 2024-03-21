@@ -3,12 +3,12 @@ import { findCompatibleVersion } from "./index.js";
 import { npm } from "./npm.js";
 
 const args = process.argv.slice(
-  process.argv.findIndex(arg => arg.endsWith("cli.js") || arg === "contextual-dependency")
+  process.argv.findIndex(arg => arg.endsWith("cli.js") || arg === "npm-check-compatible")
 );
 const packageName = args[1];
 
 if (args.length !== 2) {
-  console.log(`Usage: contextual-dependency <package name>`);
+  console.log(`Usage: npm-check-compatible <package name>`);
   process.exit(1);
 }
 

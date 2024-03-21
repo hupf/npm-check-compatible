@@ -9,7 +9,7 @@ The command walks back the versions of the given package until it finds a versio
 We've updated an Angular project from version 14 to 15 and have to update `@ng-bootstrap/ng-bootstrap` now to the latest version compatible with Angular 15:
 
 ```
-$ npx npm-check-compatible
+$ npx npm-check-compatible @ng-bootstrap/ng-bootstrap
 Searching for a version of @ng-bootstrap/ng-bootstrap whose peer dependencies are satisfied
 by the packages installed in the current project:
 Checking @ng-bootstrap/ng-bootstrap@16.0.0......

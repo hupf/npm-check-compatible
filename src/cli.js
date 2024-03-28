@@ -1,6 +1,6 @@
+#!/usr/bin/env node
 import process from "process";
 import { findCompatibleVersion } from "./index.js";
-import { npm } from "./npm.js";
 
 const args = process.argv.slice(
   process.argv.findIndex(

@@ -21,6 +21,14 @@
   ],
   "author": "Mathis Hofer <mathis@fsfe.org>",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/hupf/npm-check-compatible",
+  "bugs": {
+    "url": "https://github.com/hupf/npm-check-compatible/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hupf/npm-check-compatible.git"
+  },
   "dependencies": {
     "semver": "^7.6.0"
   },

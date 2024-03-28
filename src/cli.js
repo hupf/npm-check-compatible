@@ -4,7 +4,7 @@ import { findCompatibleVersion } from "./index.js";
 
 const args = process.argv.slice(
   process.argv.findIndex(
-    (arg) => arg.endsWith("cli.js") || arg === "npm-check-compatible",
+    (arg) => arg.endsWith("cli.js") || arg.includes("npm-check-compatible"),
   ),
 );
 const packageName = args[1];

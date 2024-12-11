@@ -1,6 +1,6 @@
 {
   "name": "npm-check-compatible",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Determines latest compatible version of a package.",
   "type": "module",
   "main": "src/index.js",

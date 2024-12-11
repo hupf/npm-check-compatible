@@ -3,6 +3,7 @@
 ## 1.0.3
 
 - Display an error message if the package has no peer dependencies.
+- Update dependencies & switch Node v22
 
 ## 1.0.2
 

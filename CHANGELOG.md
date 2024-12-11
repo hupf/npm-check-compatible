@@ -1,5 +1,9 @@
 # npm-check-compatible Changelog
 
+## 1.0.3
+
+- Display an error message if the package has no peer dependencies.
+
 ## 1.0.2
 
 - Fix CLI args detection when executed with npx.

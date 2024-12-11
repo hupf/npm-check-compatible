@@ -38,7 +38,7 @@ export function npmJson(args) {
     const result = npm(`${args.join(" ")} 2>/dev/null || true`);
     return JSON.parse(result);
   } catch (error) {
-    return JSON.parse(error.stdout.toString());
+    return error.stdout ? JSON.parse(error.stdout.toString()) : undefined;
   }
 }
 

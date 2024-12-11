@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import process from "process";
-import { findCompatibleVersion } from "./index.js";
+import { findCompatibleVersion, hasPeerDependencies } from "./index.js";
 
 const args = process.argv.slice(
   process.argv.findIndex(
@@ -11,6 +11,16 @@ const packageName = args[1];
 
 if (args.length !== 2) {
   console.log(`Usage: npm-check-compatible <package name>`);
+  process.exit(1);
+}
+
+if (!hasPeerDependencies(packageName)) {
+  console.error(
+    `The package '${packageName}' has no peer dependencies. If it is a peer\n` +
+      `dependency of a package in the project, just execute the following\n` +
+      `command to update it to the latest compatible version:\n\n` +
+      `    npm rm ${packageName} && npm i [-D] -E ${packageName}`,
+  );
   process.exit(1);
 }
 

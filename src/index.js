@@ -2,6 +2,14 @@ import semver from "semver";
 import { npmInstalledVersion, npmVersions, npmView } from "./npm.js";
 
 /**
+ * Returns true if the given package has peer dependencies, false
+ * otherwise.
+ */
+export function hasPeerDependencies(packageName) {
+  return npmView(`${packageName}@latest`, "peerDependencies") !== undefined;
+}
+
+/**
  * Returns the latest version of the given package that satisfies the
  * peerDependencies of the packages in the project.
  *
